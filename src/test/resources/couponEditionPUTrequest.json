@@ -1,0 +1,12 @@
+{
+  "description": "Акция на выдачу и применение 777",
+  "endDate": "31.12.2024",
+  "id": "6576edb86d7f5a03e2b1c669",
+  "loyalty": "FRIENDS_CLUB",
+  "name": "Выдача и применение купонов 777",
+  "needGiveaway": true,
+  "redemptionCampaignType": "DISCOUNT",
+  "redemptionType": "SINGLE",
+  "startDate": "12.12.2023"
+}
+
