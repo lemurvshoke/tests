@@ -1,5 +1,6 @@
 package petrovich.ds.dto.coupon;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,7 +27,9 @@ public class CouponEditionDTO {
     private CouponLoyalty loyalty;
     private boolean needGiveaway;
     private CampaignType redemptionCampaignType;
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate startDate;
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate endDate;
     private boolean editable;
     private boolean deletable;

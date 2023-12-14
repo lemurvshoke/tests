@@ -1,8 +1,10 @@
 package petrovich.ds.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import io.restassured.specification.RequestSpecification;
@@ -30,18 +32,8 @@ public class BaseAPITest {
 
     public BaseAPITest() {
         this.objectMapper = new ObjectMapper();
-        objectMapper.setDateFormat(new SimpleDateFormat(DATE_PATTERN));
         JavaTimeModule javaTimeModule = new JavaTimeModule();
-//        Locale locale = Locale.forLanguageTag("ru");
-//        javaTimeModule.addSerializer(LocalDate.class, new LocalDateSerializer(ofPattern(DATE_PATTERN)));
-//        javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(ofPattern(DATE_TIME_PATTEN)));
         objectMapper.registerModule(javaTimeModule);
-
-//        objectMapper.registerModule(new JavaTimeModule());
-//        SimpleModule module = new SimpleModule();
-//        module.addSerializer(LocalDate.class, new LocalDateSerializer(ofPattern(DATE_PATTERN, locale)));
-//        module.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(ofPattern(DATE_TIME_PATTEN, locale)));
-//        objectMapper.registerModule(module);
     }
 
     public ObjectMapper getObjectMapper() {
