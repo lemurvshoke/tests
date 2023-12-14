@@ -1,4 +1,4 @@
-package petrovich.ds.data.coupon;
+package petrovich.ds.coupon;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

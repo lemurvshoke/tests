@@ -1,10 +1,10 @@
-package petrovich.ds.data.campaign.segment;
+package petrovich.ds.campaign.segment;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
-import petrovich.ds.data.sale.model.EventType;
+import petrovich.ds.sale.model.EventType;
 
 
 import java.io.Serializable;

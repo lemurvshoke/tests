@@ -1,4 +1,4 @@
-package petrovich.ds.data.enums.segment;
+package petrovich.ds.enums.segment;
 
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package petrovich.ds.data.dto;
+package petrovich.ds.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

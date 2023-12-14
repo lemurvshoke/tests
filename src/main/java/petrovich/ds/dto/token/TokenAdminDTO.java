@@ -1,4 +1,4 @@
-package petrovich.ds.data.dto.token;
+package petrovich.ds.dto.token;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

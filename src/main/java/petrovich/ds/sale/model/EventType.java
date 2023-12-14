@@ -1,4 +1,4 @@
-package petrovich.ds.data.sale.model;
+package petrovich.ds.sale.model;
 
 public enum EventType {
     WELCOME_POINTS,

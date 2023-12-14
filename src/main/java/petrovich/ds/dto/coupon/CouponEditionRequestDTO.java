@@ -1,6 +1,6 @@
 package petrovich.ds.dto.coupon;
 
-public class CouponRequestDTO {
+public class CouponEditionRequestDTO {
     public String description;
     public String endDate;
     public String id;

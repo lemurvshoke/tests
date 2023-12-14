@@ -1,4 +1,4 @@
-package petrovich.ds.data.campaign.mechanic;
+package petrovich.ds.campaign.mechanic;
 
 import lombok.Getter;
 

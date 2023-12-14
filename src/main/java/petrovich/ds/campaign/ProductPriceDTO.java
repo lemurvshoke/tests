@@ -1,10 +1,10 @@
-package ru.ptr.ds.data.campaign;
+package petrovich.ds.campaign;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ru.ptr.ds.data.campaign.segment.Product;
+import petrovich.ds.campaign.segment.Product;
 
 import java.math.BigDecimal;
 

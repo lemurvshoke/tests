@@ -1,4 +1,4 @@
-package petrovich.ds.data.dto.mailing;
+package petrovich.ds.dto.mailing;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -6,8 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import petrovich.ds.data.enums.campaign.CampaignActivationType;
-import petrovich.ds.data.enums.mailing.MailingType;
+import petrovich.ds.enums.campaign.CampaignActivationType;
+import petrovich.ds.enums.mailing.MailingType;
 
 
 import javax.validation.Valid;

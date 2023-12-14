@@ -1,13 +1,14 @@
-package petrovich.ds.data.dto.coupon;
+package petrovich.ds.dto.coupon;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import petrovich.ds.data.campaign.mechanic.Mechanic;
-import petrovich.ds.data.campaign.segment.SegmentMeta;
-import petrovich.ds.data.dto.mailing.CampaignMailingDTO;
-import petrovich.ds.data.enums.campaign.CampaignStatus;
+import petrovich.ds.campaign.mechanic.Mechanic;
+import petrovich.ds.campaign.segment.SegmentMeta;
+import petrovich.ds.dto.mailing.CampaignMailingDTO;
+import petrovich.ds.enums.campaign.CampaignStatus;
+import petrovich.ds.enums.campaign.CampaignType;
 
 
 import java.time.LocalDate;

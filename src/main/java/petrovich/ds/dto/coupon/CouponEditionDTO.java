@@ -1,12 +1,13 @@
-package petrovich.ds.data.dto.coupon;
+package petrovich.ds.dto.coupon;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import petrovich.ds.data.dto.User;
-import petrovich.ds.data.enums.coupon.CouponLoyalty;
-import petrovich.ds.data.enums.coupon.CouponRedemptionType;
+import petrovich.ds.dto.User;
+import petrovich.ds.enums.campaign.CampaignType;
+import petrovich.ds.enums.coupon.CouponLoyalty;
+import petrovich.ds.enums.coupon.CouponRedemptionType;
 
 
 import java.time.LocalDate;
@@ -27,6 +28,8 @@ public class CouponEditionDTO {
     private CampaignType redemptionCampaignType;
     private LocalDate startDate;
     private LocalDate endDate;
+    private boolean editable;
+    private boolean deletable;
 
     private CouponCampaignDTO issuingCampaign;
     private CouponCampaignDTO applyingCampaign;

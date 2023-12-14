@@ -1,13 +1,13 @@
-package petrovich.ds.data.campaign.mechanic;
+package petrovich.ds.campaign.mechanic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import petrovich.ds.data.enums.campaign.CampaignSubtype;
-import petrovich.ds.data.enums.campaign.LoyaltyType;
-import petrovich.ds.data.enums.campaign.Multiplicity;
-import petrovich.ds.data.enums.segment.ActionType;
+import petrovich.ds.enums.campaign.CampaignSubtype;
+import petrovich.ds.enums.campaign.LoyaltyType;
+import petrovich.ds.enums.campaign.Multiplicity;
+import petrovich.ds.enums.segment.ActionType;
 
 
 import javax.validation.Valid;

@@ -1,6 +1,7 @@
 package petrovich.ds;
 
-public class Main {
+public class TestsApplication {
     public static void main(String[] args) {
+
     }
 }

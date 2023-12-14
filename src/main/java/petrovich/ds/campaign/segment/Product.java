@@ -1,4 +1,4 @@
-package ru.ptr.ds.data.campaign.segment;
+package petrovich.ds.campaign.segment;
 
 import lombok.Getter;
 import lombok.Setter;

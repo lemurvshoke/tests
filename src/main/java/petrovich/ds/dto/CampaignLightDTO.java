@@ -1,11 +1,11 @@
-package petrovich.ds.data.dto;
+package petrovich.ds.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
-import petrovich.ds.data.campaign.mechanic.TemplateField;
-import petrovich.ds.data.enums.campaign.CampaignStatus;
-import petrovich.ds.data.enums.campaign.CampaignType;
+import petrovich.ds.campaign.mechanic.TemplateField;
+import petrovich.ds.enums.campaign.CampaignStatus;
+import petrovich.ds.enums.campaign.CampaignType;
 
 
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package ru.ptr.ds.data.campaign;
+package petrovich.ds.campaign;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

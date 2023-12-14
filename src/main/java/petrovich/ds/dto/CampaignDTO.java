@@ -1,17 +1,18 @@
-package petrovich.ds.data.dto;
+package petrovich.ds.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import petrovich.ds.data.campaign.FullDescription;
-import petrovich.ds.data.campaign.mechanic.Mechanic;
-import petrovich.ds.data.dto.mailing.CampaignMailingDTO;
-import petrovich.ds.data.dto.segment.SegmentDTO;
-import petrovich.ds.data.enums.campaign.CampaignActivationType;
-import petrovich.ds.data.enums.campaign.CampaignStatus;
-import petrovich.ds.data.enums.mailing.MailingType;
+import petrovich.ds.campaign.FullDescription;
+import petrovich.ds.campaign.mechanic.Mechanic;
+import petrovich.ds.dto.mailing.CampaignMailingDTO;
+import petrovich.ds.dto.segment.SegmentDTO;
+import petrovich.ds.enums.campaign.CampaignActivationType;
+import petrovich.ds.enums.campaign.CampaignStatus;
+import petrovich.ds.enums.campaign.CampaignType;
+import petrovich.ds.enums.mailing.MailingType;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;

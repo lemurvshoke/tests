@@ -1,4 +1,4 @@
-package petrovich.ds.data.dto.mailing;
+package petrovich.ds.dto.mailing;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

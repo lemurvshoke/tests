@@ -1,8 +1,8 @@
-package petrovich.ds.data.campaign.segment;
+package petrovich.ds.campaign.segment;
 
 import lombok.Getter;
 import lombok.Setter;
-import petrovich.ds.data.campaign.mechanic.FieldType;
+import petrovich.ds.campaign.mechanic.FieldType;
 
 import java.io.Serializable;
 import java.util.Objects;

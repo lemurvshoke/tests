@@ -1,4 +1,4 @@
-package petrovich.ds.data.enums.mailing;
+package petrovich.ds.enums.mailing;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package petrovich.ds.data.campaign.segment;
+package petrovich.ds.campaign.segment;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package petrovich.ds.data.enums.campaign;
+package petrovich.ds.enums.campaign;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

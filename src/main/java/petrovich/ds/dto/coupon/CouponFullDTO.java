@@ -1,12 +1,12 @@
-package petrovich.ds.data.dto.coupon;
+package petrovich.ds.dto.coupon;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import petrovich.ds.data.coupon.CouponDelivery;
-import petrovich.ds.data.enums.coupon.CouponRedemptionType;
-import petrovich.ds.data.enums.coupon.CouponStatus;
+import petrovich.ds.coupon.CouponDelivery;
+import petrovich.ds.enums.coupon.CouponRedemptionType;
+import petrovich.ds.enums.coupon.CouponStatus;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
