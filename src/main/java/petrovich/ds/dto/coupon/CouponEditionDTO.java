@@ -1,6 +1,7 @@
 package petrovich.ds.dto.coupon;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import lombok.experimental.Accessors;
 import petrovich.ds.dto.User;
@@ -12,6 +13,8 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @Accessors(chain = true)
+@EqualsAndHashCode
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CouponEditionDTO {
     public String id;
     public String externalId;

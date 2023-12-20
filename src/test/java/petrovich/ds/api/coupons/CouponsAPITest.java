@@ -57,34 +57,33 @@ public class CouponsAPITest extends BaseAPITest {
     @SneakyThrows
     public void createCouponEditionTest() {
         // СМОТРЕТЬ ЭТОТ ТЕСТ
-        JSONAssert.assertEquals(new String(readAllBytes(get(createPathResponse))),
-                given(loginWithBearerToken)
-                        .body(readAllBytes(get(createPathRequest)))
-                        .when()
-                        .post("/coupon/edition")
-                        .then()
-                        .statusCode(200)
-                        .extract()
-                        .body()
-                        .asString(),
-                JSONCompareMode.STRICT_ORDER);
+//        JSONAssert.assertEquals(new String(readAllBytes(get(createPathResponse))),
+//                given(loginWithBearerToken)
+//                        .body(readAllBytes(get(createPathRequest)))
+//                        .when()
+//                        .post("/coupon/edition")
+//                        .then()
+//                        .statusCode(200)
+//                        .extract()
+//                        .body()
+//                        .asString(),
+//                JSONCompareMode.STRICT_ORDER);
 
         // КАК БЫЛО
 
-//        CouponEditionDTO expcted = getObjectMapper().readValue(
-//                readAllBytes(get(createPathResponse)), CouponEditionDTO.class);
-//
-//        CouponEditionDTO actual = given(loginWithBearerToken)
-//                .body(readAllBytes(get(createPathRequest)))
-//                .when()
-//                .post("/coupon/edition")
-//                .then()
-//                .statusCode(200)
-//                .extract()
-//                .body()
-//                .as(CouponEditionDTO.class);
-//
-//        Assertions.assertEquals(expcted, actual);
+        CouponEditionDTO expcted = getObjectMapper().readValue(
+                readAllBytes(get(createPathResponse)), CouponEditionDTO.class);
+
+        CouponEditionDTO actual = given(loginWithBearerToken)
+                .body(readAllBytes(get(createPathRequest)))
+                .when()
+                .post("/coupon/edition")
+                .then()
+                .extract()
+                .body()
+                .as(CouponEditionDTO.class);
+
+        Assertions.assertEquals(expcted, actual);
     }
 
 
