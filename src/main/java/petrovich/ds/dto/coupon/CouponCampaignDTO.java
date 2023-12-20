@@ -1,21 +1,16 @@
 package petrovich.ds.dto.coupon;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 import petrovich.ds.campaign.mechanic.Mechanic;
 import petrovich.ds.campaign.segment.SegmentMeta;
 import petrovich.ds.dto.mailing.CampaignMailingDTO;
 import petrovich.ds.enums.campaign.CampaignStatus;
 import petrovich.ds.enums.campaign.CampaignType;
-
-
 import java.time.LocalDate;
 import java.util.Collection;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Accessors(chain = true)
 public class CouponCampaignDTO {

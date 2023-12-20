@@ -8,6 +8,7 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import io.restassured.specification.RequestSpecification;
+import lombok.SneakyThrows;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -40,12 +41,6 @@ public class BaseAPITest {
         return this.objectMapper;
     }
 
-
-//    public RequestSpecification loginWithBearer =
-//            given()
-//                    .baseUri(API_URL_DEV)
-//                    .header("Authorization", "Bearer " + getAdminToken());
-
     public RequestSpecification loginWithBearerToken =
             given()
                     .baseUri(API_URL_DEV)
@@ -67,6 +62,5 @@ public class BaseAPITest {
                 .jsonPath()
                 .getString("access_token");
     }
-
 
 }

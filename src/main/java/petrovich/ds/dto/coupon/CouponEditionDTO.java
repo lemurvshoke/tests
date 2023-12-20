@@ -1,44 +1,39 @@
 package petrovich.ds.dto.coupon;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 import petrovich.ds.dto.User;
 import petrovich.ds.enums.campaign.CampaignType;
 import petrovich.ds.enums.coupon.CouponLoyalty;
 import petrovich.ds.enums.coupon.CouponRedemptionType;
-
-
 import java.time.LocalDate;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Accessors(chain = true)
 public class CouponEditionDTO {
-    private String id;
-    private String externalId;
-    private String name;
-    private String description;
-    private User owner;
-    private CouponRedemptionType redemptionType;
-    private CouponLoyalty loyalty;
-    private boolean needGiveaway;
-    private CampaignType redemptionCampaignType;
+    public String id;
+    public String externalId;
+    public String name;
+    public String description;
+    public User owner;
+    public CouponRedemptionType redemptionType;
+    public CouponLoyalty loyalty;
+    public boolean needGiveaway;
+    public CampaignType redemptionCampaignType;
     @JsonFormat(pattern = "dd.MM.yyyy")
-    private LocalDate startDate;
+    public LocalDate startDate;
     @JsonFormat(pattern = "dd.MM.yyyy")
-    private LocalDate endDate;
-    private boolean editable;
-    private boolean deletable;
+    public LocalDate endDate;
+    public boolean editable;
+    public boolean deletable;
 
-    private CouponCampaignDTO issuingCampaign;
-    private CouponCampaignDTO applyingCampaign;
+    public CouponCampaignDTO issuingCampaign;
+    public CouponCampaignDTO applyingCampaign;
 
-    private boolean started;
-    private boolean stopped;
+    public boolean started;
+    public boolean stopped;
 
     public boolean getEditable() {
         return externalId == null && !started && !stopped;

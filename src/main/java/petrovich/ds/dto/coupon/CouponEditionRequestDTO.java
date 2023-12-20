@@ -1,6 +1,11 @@
 package petrovich.ds.dto.coupon;
 
+import lombok.*;
+
+@Data
+@NoArgsConstructor
 public class CouponEditionRequestDTO {
+
     public String description;
     public String endDate;
     public String id;
