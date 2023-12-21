@@ -1,16 +1,16 @@
 package petrovich.ds.dto.coupon;
 
-import lombok.*;
-import lombok.experimental.Accessors;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import petrovich.ds.coupon.CouponDelivery;
 import petrovich.ds.enums.coupon.CouponRedemptionType;
 import petrovich.ds.enums.coupon.CouponStatus;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Data
-@Accessors(chain = true)
 @NoArgsConstructor
 public class CouponFullDTO implements Serializable {
 

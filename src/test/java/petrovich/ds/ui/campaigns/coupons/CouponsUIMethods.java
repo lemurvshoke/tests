@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static org.openqa.selenium.Keys.ARROW_DOWN;
 
-public class BaseCouponsUITest extends BaseUITest {
+public class CouponsUIMethods extends BaseUITest {
     // Переход на вкладку купоны
     public void goToCouponsTab() {
         $(byText("Акции с промокодами")).click();

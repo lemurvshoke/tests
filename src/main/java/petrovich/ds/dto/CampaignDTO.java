@@ -1,6 +1,6 @@
 package petrovich.ds.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -44,17 +44,28 @@ public class CampaignDTO {
     private CampaignType type;
     private CampaignStatus status = CampaignStatus.DRAFT;
     @NotNull
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate startDate;
     @NotNull
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate endDate;
+    @JsonFormat(pattern = "dd.MM.yyyy HH:mm:ss")
     private LocalDateTime creationDate;
+    @JsonFormat(pattern = "dd.MM.yyyy HH:mm:ss")
     private LocalDateTime activationDate;
+    @JsonFormat(pattern = "dd.MM.yyyy HH:mm:ss")
     private LocalDateTime terminationDate;
     private SegmentDTO segment;
     private Mechanic mechanic;
     private List<CampaignMailingDTO> mailings;
     private boolean notificationEnabled = true;
     private boolean personalCabinetEnabled = true;
+    private User owner;
+    private boolean needGiveaway;
+    private boolean started;
+    private boolean stopped;
+    private boolean editable;
+    private boolean deletable;
 
     @JsonIgnore
     public CampaignMailingDTO getMailingByType(MailingType type) {

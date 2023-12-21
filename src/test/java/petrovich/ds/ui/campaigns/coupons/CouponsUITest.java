@@ -12,7 +12,7 @@ import static petrovich.ds.ui.campaigns.coupons.util.UnionReusedSteps.createUnio
 
 
 @DisplayName("Промокоды")
-public class CouponsUITest extends BaseCouponsUITest {
+public class CouponsUITest extends CouponsUIMethods {
 
     // КЛУБ ДРУЗЕЙ
     @Test

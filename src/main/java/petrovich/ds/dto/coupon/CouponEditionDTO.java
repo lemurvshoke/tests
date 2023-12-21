@@ -1,17 +1,17 @@
 package petrovich.ds.dto.coupon;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
-import lombok.experimental.Accessors;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import petrovich.ds.dto.User;
 import petrovich.ds.enums.campaign.CampaignType;
 import petrovich.ds.enums.coupon.CouponLoyalty;
 import petrovich.ds.enums.coupon.CouponRedemptionType;
+
 import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
-@Accessors(chain = true)
 public class CouponEditionDTO {
     public String id;
     public String externalId;

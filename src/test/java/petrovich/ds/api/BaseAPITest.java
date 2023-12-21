@@ -1,33 +1,22 @@
 package petrovich.ds.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import io.restassured.specification.RequestSpecification;
 import lombok.SneakyThrows;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Locale;
+import java.time.format.DateTimeFormatter;
 
 import static io.restassured.RestAssured.given;
-import static java.time.format.DateTimeFormatter.ofPattern;
 
 
 public class BaseAPITest {
 
-    static final String BASE_URL_DEV = "http://dmz-decision01.stdp.ru";
-    static final String BASE_URL_STAGE = "http://ui.js.a.kluatr.ru";
+    public static final String BASE_URL_DEV = "http://dmz-decision01.stdp.ru";
+    public static final String BASE_URL_STAGE = "http://ui.js.a.kluatr.ru";
     public static final String API_URL_DEV = "http://dmz-decision01.stdp.ru/api/ds";
-    static final String API_URL_STAGE = "http://ui.js.a.kluatr.ru/api/ds";
-    public static String campaignId;
-    private static final String DATE_PATTERN = "dd.MM.yyyy";
-    private static final String DATE_TIME_PATTEN = "dd.MM.yyyy HH:mm:ss";
+    public static final String API_URL_STAGE = "http://ui.js.a.kluatr.ru/api/ds";
 
     private final ObjectMapper objectMapper;
 
@@ -35,6 +24,7 @@ public class BaseAPITest {
         this.objectMapper = new ObjectMapper();
         JavaTimeModule javaTimeModule = new JavaTimeModule();
         objectMapper.registerModule(javaTimeModule);
+//        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
     public ObjectMapper getObjectMapper() {
@@ -63,4 +53,15 @@ public class BaseAPITest {
                 .getString("access_token");
     }
 
+    @SneakyThrows
+    public LocalDate isToday() {
+        return LocalDate.parse(String.valueOf(LocalDate.now()),
+                DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    }
+
+    @SneakyThrows
+    public LocalDate isTodayPlus3Days() {
+        return LocalDate.parse(String.valueOf(LocalDate.now().plusDays(3)),
+                DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    }
 }

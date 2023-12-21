@@ -1,13 +1,13 @@
 package petrovich.ds.ui.campaigns.coupons.util;
 
 import lombok.SneakyThrows;
-import petrovich.ds.ui.campaigns.coupons.BaseCouponsUITest;
+import petrovich.ds.ui.campaigns.coupons.CouponsUIMethods;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class BothLoyaltyReusedSteps extends BaseCouponsUITest {
+public class BothLoyaltyReusedSteps extends CouponsUIMethods {
     // Промокоды КД+СО: создание основной акции Скидка: одноразовые купоны
     @SneakyThrows
     public static void create2loyaltyDiscountCampaignX1Coupon() {

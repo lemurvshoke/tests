@@ -1,14 +1,14 @@
 package petrovich.ds.ui.campaigns.coupons.util;
 
 import lombok.SneakyThrows;
-import petrovich.ds.ui.campaigns.coupons.BaseCouponsUITest;
+import petrovich.ds.ui.campaigns.coupons.CouponsUIMethods;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static org.openqa.selenium.Keys.ARROW_DOWN;
 
-public class FriendsReusedSteps extends BaseCouponsUITest {
+public class FriendsReusedSteps extends CouponsUIMethods {
     @SneakyThrows
     // Промокоды КД: создание основной акции Скидка: одноразовые купоны
     public static void createFriendsDiscountCampaignX1Coupon() {

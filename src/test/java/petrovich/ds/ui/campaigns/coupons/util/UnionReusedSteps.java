@@ -2,7 +2,7 @@ package petrovich.ds.ui.campaigns.coupons.util;
 
 import lombok.SneakyThrows;
 import org.openqa.selenium.Keys;
-import petrovich.ds.ui.campaigns.coupons.BaseCouponsUITest;
+import petrovich.ds.ui.campaigns.coupons.CouponsUIMethods;
 
 
 import static com.codeborne.selenide.Condition.visible;
@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 
-public class UnionReusedSteps extends BaseCouponsUITest {
+public class UnionReusedSteps extends CouponsUIMethods {
     @SneakyThrows
     // Промокоды СО: создание основной акции Скидка: одноразовые купоны
     public static void createUnionDiscountCampaignX1Coupon() {

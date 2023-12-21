@@ -8,17 +8,16 @@ import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
-public class CouponEditionRequestDTO {
+public class CouponCampaignRequestDTO {
 
     public String description;
+    public String editionId;
     @JsonFormat(pattern = "dd.MM.yyyy")
     public LocalDate endDate;
     public String id;
-    public String loyalty;
     public String name;
-    public boolean needGiveaway;
-    public String redemptionCampaignType;
-    public String redemptionType;
+    public String shortName;
     @JsonFormat(pattern = "dd.MM.yyyy")
     public LocalDate startDate;
+    public String type;
 }
