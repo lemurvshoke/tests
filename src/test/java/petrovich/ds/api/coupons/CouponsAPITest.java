@@ -9,11 +9,14 @@ import petrovich.ds.dto.coupon.CouponCampaignDTO;
 import petrovich.ds.dto.coupon.CouponEditionDTO;
 import petrovich.ds.dto.coupon.CouponEditionRequestDTO;
 
+import java.time.LocalDateTime;
+
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 import static java.nio.file.Files.*;
 import static java.nio.file.Paths.get;
 import static org.assertj.core.api.Assertions.*;
+import static petrovich.ds.enums.coupon.CouponCampaignType.ISSUE;
 
 @DisplayName("Купоны")
 public class CouponsAPITest extends CouponsAPIMethods {
@@ -107,15 +110,17 @@ public class CouponsAPITest extends CouponsAPIMethods {
     public void createCouponCampaignTest() {
 
         assertThat(given(loginWithBearerToken)
+                .queryParam("type", ISSUE)
                 .body(issueCampaignPOSTRequest)
                 .when()
-                .post("/coupon/edition")
+                .post("/coupon/campaign")
                 .then()
                 .statusCode(200)
                 .extract()
                 .body()
                 .as(CampaignDTO.class))
                 .usingRecursiveComparison()
+                .ignoringFieldsOfTypes(LocalDateTime.class)
                 .isEqualTo(issueCampaignPOSTResponse);
     }
 

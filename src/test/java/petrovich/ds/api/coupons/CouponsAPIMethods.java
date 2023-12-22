@@ -57,6 +57,7 @@ public class CouponsAPIMethods extends BaseAPITest {
                 CampaignDTO.class);
         issueCampaignPOSTResponse.setStartDate(isToday());
         issueCampaignPOSTResponse.setEndDate(isTodayPlus3Days());
+        issueCampaignPOSTResponse.setCreationDate(isCreatedToday());
 
 
     }

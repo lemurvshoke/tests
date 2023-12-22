@@ -1,0 +1,30 @@
+{
+  "id": "айди678",
+  "name": "нейм",
+  "shortName": "шорт",
+  "description": "дескриптион",
+  "type": "COUPONS",
+  "status": "DRAFT",
+  "startDate": "19.12.2023",
+  "endDate": "25.12.2023",
+  "creationDate": "20.12.2023 05:15:04",
+  "segment": {
+    "name": "Динамический сегмент",
+    "dynamicConfig": {
+      "type": "CATEGORY",
+      "customerCategory": "FRIENDS_CLUB",
+      "customerType": "INDIVIDUAL",
+      "hasCard": true,
+      "cardTypes": []
+    },
+    "headers": [],
+    "columns": [],
+    "common": true
+  },
+  "notificationEnabled": true,
+  "personalCabinetEnabled": true,
+  "owner": {
+    "name": "Администратор",
+    "username": "test_administrator"
+  }
+}

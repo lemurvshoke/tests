@@ -6,6 +6,7 @@ import io.restassured.specification.RequestSpecification;
 import lombok.SneakyThrows;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import static io.restassured.RestAssured.given;
@@ -57,6 +58,11 @@ public class BaseAPITest {
     public LocalDate isToday() {
         return LocalDate.parse(String.valueOf(LocalDate.now()),
                 DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    }
+    @SneakyThrows
+    public LocalDateTime isCreatedToday() {
+        return LocalDateTime.parse(String.valueOf(LocalDateTime.now().withNano(0)),
+                DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
     }
 
     @SneakyThrows
