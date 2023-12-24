@@ -1,6 +1,7 @@
 package petrovich.ds.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,9 +15,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
-@EqualsAndHashCode
+@Data
 public class CampaignLightDTO {
     private String id;
     private String name;

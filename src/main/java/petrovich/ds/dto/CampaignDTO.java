@@ -1,10 +1,7 @@
 package petrovich.ds.dto;
 
 import com.fasterxml.jackson.annotation.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import petrovich.ds.campaign.FullDescription;
 import petrovich.ds.campaign.mechanic.Mechanic;
 import petrovich.ds.dto.mailing.CampaignMailingDTO;
@@ -22,10 +19,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 public class CampaignDTO {
 
     private String id;

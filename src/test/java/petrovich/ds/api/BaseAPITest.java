@@ -32,11 +32,25 @@ public class BaseAPITest {
         return this.objectMapper;
     }
 
-    public RequestSpecification loginWithBearerToken =
+    public RequestSpecification withBearerToken =
             given()
                     .baseUri(API_URL_DEV)
                     .header("Authorization", "Bearer " + getAdminToken())
                     .header("Content-Type", "application/json");
+
+    public RequestSpecification noAuth =
+            given()
+                    .baseUri(API_URL_DEV)
+                    .header("Content-Type", "application/json");
+
+    public RequestSpecification basicAuth =
+            given()
+                    .auth()
+                    .preemptive()
+                    .basic("ws", "ws")
+                    .baseUri(API_URL_DEV)
+                    .header("Content-Type", "application/json");
+
 
     // Получить токен Админа
     public String getAdminToken() {
@@ -59,6 +73,7 @@ public class BaseAPITest {
         return LocalDate.parse(String.valueOf(LocalDate.now()),
                 DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
+
     @SneakyThrows
     public LocalDateTime isCreatedToday() {
         return LocalDateTime.parse(String.valueOf(LocalDateTime.now().withNano(0)),

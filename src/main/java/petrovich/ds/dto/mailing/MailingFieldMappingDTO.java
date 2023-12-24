@@ -1,16 +1,10 @@
 package petrovich.ds.dto.mailing;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
 
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 public class MailingFieldMappingDTO {
 
     private String id;
@@ -19,4 +13,5 @@ public class MailingFieldMappingDTO {
     private boolean manual;
     private String value;
     private boolean skip;
+    private boolean skipAvailable;
 }
