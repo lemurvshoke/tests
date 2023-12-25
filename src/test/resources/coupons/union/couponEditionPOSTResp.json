@@ -1,0 +1,170 @@
+{
+  "id": "6576edb86d7f5a03e2b1c688",
+  "externalId": "659962b0-a22c-11ee-bec8-00155dfcf30d",
+  "name": "Выдача и применение купонов 2412",
+  "description": "Описание: Акция на выдачу и применение",
+  "owner": {
+    "name": "Администратор",
+    "username": "test_administrator"
+  },
+  "redemptionType": "SINGLE",
+  "loyalty": "FRIENDS_CLUB",
+  "needGiveaway": true,
+  "redemptionCampaignType": "DISCOUNT",
+  "startDate": "24.12.2023",
+  "endDate": "27.12.2023",
+  "issuingCampaign": {
+    "id": "id678issue",
+    "name": "нейм",
+    "shortName": "шорт",
+    "description": "дескриптион",
+    "startDate": "24.12.2023",
+    "endDate": "27.12.2023",
+    "status": "ACTIVE",
+    "type": "COUPONS",
+    "segment": {
+      "name": "Динамический сегмент",
+      "dynamicConfig": {
+        "type": "CATEGORY",
+        "customerCategory": "FRIENDS_CLUB",
+        "customerType": "INDIVIDUAL",
+        "hasCard": true,
+        "cardTypes": []
+      },
+      "headers": [],
+      "columns": [],
+      "common": true
+    },
+    "mechanic": {
+      "ruleData": {
+        "ruleTemplate": "COUPONS_AVG_PURCHASE",
+        "variables": [
+          {
+            "rusName": "Тираж купонов",
+            "templateVariable": "coupons",
+            "fieldType": "COUPON_EDITION",
+            "value": "6576edb86d7f5a03e2b1c688",
+            "manual": true,
+            "notRequired": false,
+            "removable": false
+          },
+          {
+            "rusName": "Сумма покупки",
+            "templateVariable": "sum",
+            "fieldType": "NUMBER",
+            "value": "11111",
+            "manual": true,
+            "notRequired": false,
+            "removable": false
+          }
+        ],
+        "rule": "package ru.ptr.ds.data.campaign;\nimport ru.ptr.ds.data.campaign.Stat\nimport ru.ptr.ds.data.campaign.StatValues\nimport ru.ptr.ds.data.campaign.segment.ActionType\nimport ru.ptr.ds.data.campaign.dokupi.CompareProcessing\nimport ru.ptr.ds.data.campaign.processing2.SaleProcessing2\nimport ru.ptr.ds.data.campaign.processing2.ProcessingResult\nimport ru.ptr.ds.data.campaign.processing2.EventProcessing\nimport ru.ptr.ds.data.campaign.processing2.NumValue\nimport ru.ptr.ds.data.campaign.processing2.Operation\nimport ru.ptr.ds.data.campaign.dokupi.DokupiResult\nimport ru.ptr.ds.data.campaign.actions.PointsAction\nimport ru.ptr.ds.data.campaign.actions.DiscountAction\nimport ru.ptr.ds.other.util.ActionUtils\nimport ru.ptr.ds.data.campaign.mechanic.RuleTemplate\nimport ru.ptr.ds.data.campaign.mechanic.TemplateField\nimport ru.ptr.pdp.data.sale.model.event.TriggerEvent\nimport ru.ptr.ds.data.campaign.segment.SegmentData\nimport ru.ptr.ds.data.campaign.deal.Sale\nimport ru.ptr.ds.data.campaign.deal.SaleWrap\nimport ru.ptr.ds.data.coupon.Coupon\nimport ru.ptr.ds.data.coupon.SaleCoupon\nimport java.math.BigDecimal\nimport java.util.Arrays\nglobal ru.ptr.ds.service.processing.StatService statService;\nglobal ru.ptr.ds.service.processing.ActionService actService;\nglobal ru.ptr.ds.service.segment.SegmentDataService dataService;\nglobal ru.ptr.ds.service.campaign.ParticipationService partService;\nglobal ru.ptr.ds.service.processing.PointsService pointsService;\nglobal ru.ptr.ds.service.processing.LoyaltyService loyaltyService;\nglobal ru.ptr.ds.service.processing.UnionService unionService;\nglobal java.util.List list;\nrule \"COUPONS_AVG_PURCHASE id678issue\"\nlock-on-active true\nagenda-group \"COUPONS\"\nwhen\n    a: CampaignDRL(campaignId: id == \"id678issue\")\n    tempSale: Sale(partService.isPerfectlyTimed(refund, date, a.startDate, a.endDate), customerUUID != null)\n    partSale: SaleWrap()\n    sale: Sale(saleId: id, customerId: customerUUID, sprocessing: is2()) from partService.filter(tempSale, campaignId, partSale.getParticipatingSale(campaignId))\n    c: CampaignDRL(data: data, customerGroup: data.getCustomer().isActuallyParticipate()) from dataService.loadUp(a, customerId)\n    CampaignDRL(coupons: mechanic.ruleData.templateVariable(\"coupons\").stringValue) from c\n    CampaignDRL(sum: mechanic.ruleData.templateVariable(\"sum\").numericValue) from c\n    result: ProcessingResult() from Operation.gte().name(\"main\").l(sprocessing.cartSum()).r(NumValue.of(\"sum\",sum)).evaluate() \n    CampaignDRL(type: mechanic.type) from c\n    CampaignDRL(loyaltyType: mechanic.loyaltyType) from c\n    CampaignDRL(dokupiType: mechanic.campaignSubtype) from c\n    CampaignDRL(cumulative: mechanic.isCumulative) from c\nthen\n    boolean ignore = false;\n    int succ = 1;\n    boolean isMain = true;\n    ActResult act = new ActResult(Arrays.asList(new PointsAction(campaignId, customerId, saleId, type, ignore)\n                .setStatValues(result)\n                .setLimit(sum)\n                .initializePoints(sale, BigDecimal.ZERO, succ)\n), customerGroup);\n    list.add(FireResult.builder().success(result.isSuccess())\n            .action(act)\n            .stat(new StatResult(new Stat(campaignId, customerId, result),\n            sum, succ, isMain))\n            .sale(sale).build());\nend"
+      },
+      "multiplicity": "ALWAYS",
+      "times": 0,
+      "type": "COUPONS",
+      "loyaltyType": "NONE",
+      "campaignSubtype": "POINTS",
+      "cumulative": false,
+      "foreach": false
+    },
+    "mailings": [
+      {
+        "id": "ab6083db-af69-42b3-9624-3d3a2b4987ad",
+        "campaignId": "id678issue",
+        "sendDate": "24.12.2023",
+        "sent": false,
+        "type": "COUPONS",
+        "template": {
+          "id": "5de0c3663b74f400013116de",
+          "name": "1.1.4",
+          "mindboxId": "1.1.4",
+          "used": false,
+          "fields": [
+            {
+              "name": "statPoints",
+              "required": true
+            }
+          ]
+        },
+        "mappings": [
+          {
+            "name": "statPoints",
+            "manual": true,
+            "value": "ура! склад!",
+            "skip": false
+          }
+        ]
+      }
+    ]
+  },
+  "applyingCampaign": {
+    "id": "id678apply",
+    "name": "нейм",
+    "shortName": "шорт",
+    "description": "дескриптион",
+    "startDate": "24.12.2023",
+    "endDate": "27.12.2023",
+    "status": "ACTIVE",
+    "type": "DISCOUNT",
+    "segment": {
+      "name": "Динамический сегмент",
+      "dynamicConfig": {
+        "type": "CATEGORY",
+        "customerCategory": "FRIENDS_CLUB",
+        "customerType": "INDIVIDUAL",
+        "hasCard": true,
+        "cardTypes": []
+      },
+      "headers": [],
+      "columns": [],
+      "common": true
+    },
+    "mechanic": {
+      "ruleData": {
+        "ruleTemplate": "DISCOUNT_SUM_COUPON_DEPEND",
+        "variables": [
+          {
+            "rusName": "Тираж купонов",
+            "templateVariable": "coupons",
+            "fieldType": "COUPON_EDITION",
+            "value": "6576edb86d7f5a03e2b1c688",
+            "manual": true,
+            "notRequired": false,
+            "removable": false
+          },
+          {
+            "rusName": "Сумма покупки",
+            "templateVariable": "sum",
+            "fieldType": "NUMBER",
+            "value": "11111",
+            "manual": true,
+            "notRequired": false,
+            "removable": false
+          },
+          {
+            "rusName": "Скидка",
+            "templateVariable": "discount",
+            "fieldType": "NUMBER",
+            "value": "20",
+            "manual": true,
+            "notRequired": false,
+            "removable": false
+          }
+        ],
+        "rule": "package ru.ptr.ds.data.campaign;\nimport ru.ptr.ds.data.campaign.Stat\nimport ru.ptr.ds.data.campaign.StatValues\nimport ru.ptr.ds.data.campaign.segment.ActionType\nimport ru.ptr.ds.data.campaign.dokupi.CompareProcessing\nimport ru.ptr.ds.data.campaign.processing2.SaleProcessing2\nimport ru.ptr.ds.data.campaign.processing2.ProcessingResult\nimport ru.ptr.ds.data.campaign.processing2.EventProcessing\nimport ru.ptr.ds.data.campaign.processing2.NumValue\nimport ru.ptr.ds.data.campaign.processing2.Operation\nimport ru.ptr.ds.data.campaign.dokupi.DokupiResult\nimport ru.ptr.ds.data.campaign.actions.PointsAction\nimport ru.ptr.ds.data.campaign.actions.DiscountAction\nimport ru.ptr.ds.other.util.ActionUtils\nimport ru.ptr.ds.data.campaign.mechanic.RuleTemplate\nimport ru.ptr.ds.data.campaign.mechanic.TemplateField\nimport ru.ptr.pdp.data.sale.model.event.TriggerEvent\nimport ru.ptr.ds.data.campaign.segment.SegmentData\nimport ru.ptr.ds.data.campaign.deal.Sale\nimport ru.ptr.ds.data.campaign.deal.SaleWrap\nimport ru.ptr.ds.data.coupon.Coupon\nimport ru.ptr.ds.data.coupon.SaleCoupon\nimport java.math.BigDecimal\nimport java.util.Arrays\nglobal ru.ptr.ds.service.processing.StatService statService;\nglobal ru.ptr.ds.service.processing.ActionService actService;\nglobal ru.ptr.ds.service.segment.SegmentDataService dataService;\nglobal ru.ptr.ds.service.campaign.ParticipationService partService;\nglobal ru.ptr.ds.service.processing.PointsService pointsService;\nglobal ru.ptr.ds.service.processing.LoyaltyService loyaltyService;\nglobal ru.ptr.ds.service.processing.UnionService unionService;\nglobal java.util.List list;\nrule \"DISCOUNT_SUM_COUPON_DEPEND id678apply\"\nlock-on-active true\nagenda-group \"DISCOUNT\"\nwhen\n    a: CampaignDRL(campaignId: id == \"id678apply\")\n    sale: Sale(partService.isPerfectlyTimed(refund, date, a.startDate, a.endDate), customerUUID != null, saleId: id, customerId: customerUUID, sprocessing: is2())\n    c: CampaignDRL(data: data, customerGroup: data.getCustomer().isActuallyParticipate()) from dataService.loadUp(a, customerId)\n    CampaignDRL(coupons: mechanic.ruleData.templateVariable(\"coupons\").stringValue) from c\n    CampaignDRL(discount: mechanic.ruleData.templateVariable(\"discount\").numericValue) from c\n    CampaignDRL(sum: mechanic.ruleData.templateVariable(\"sum\").numericValue) from c\n    result: ProcessingResult() from Operation.gte().name(\"main\").l(sprocessing.cartSum()).r(NumValue.of(\"sum\",sum)).evaluate() \n    scoupon: SaleCoupon(editionId == coupons) from sale.getCoupon() \n    CampaignDRL(type: mechanic.type) from c\n    CampaignDRL(loyaltyType: mechanic.loyaltyType) from c\n    CampaignDRL(dokupiType: mechanic.campaignSubtype) from c\n    CampaignDRL(cumulative: mechanic.isCumulative) from c\nthen\n    boolean ignore = false;\n    int succ = 1;\n    boolean isMain = true;\n    ActResult act = new ActResult(Arrays.asList(new DiscountAction(campaignId, customerId, saleId, ignore, type)\n                .setValues(discount)\n                .setCouponId(scoupon.getId())\n), customerGroup);\n    list.add(FireResult.builder().success(result.isSuccess())\n            .action(act)\n            .stat(new StatResult(new Stat(campaignId, customerId, result),\n            sum, succ, isMain))\n            .sale(sale).build());\nend"
+      },
+      "multiplicity": "ALWAYS",
+      "times": 0,
+      "type": "PERCENT",
+      "loyaltyType": "NONE",
+      "campaignSubtype": "DISCOUNT",
+      "cumulative": false,
+      "foreach": false
+    }
+  },
+  "started": true,
+  "stopped": false,
+  "editable": false,
+  "deletable": false
+}

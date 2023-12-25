@@ -1,0 +1,11 @@
+{
+  "description": "Описание: Акция на выдачу и применение",
+  "endDate": "31.12.2023",
+  "id": "6576edb86d7f5a03e2b1c688",
+  "loyalty": "UNION",
+  "name": "Название: Выдача и применение купонов",
+  "needGiveaway": true,
+  "redemptionCampaignType": "DISCOUNT",
+  "redemptionType": "SINGLE",
+  "startDate": "12.12.2023"
+}

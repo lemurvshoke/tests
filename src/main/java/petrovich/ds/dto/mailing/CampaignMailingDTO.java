@@ -29,7 +29,7 @@ public class CampaignMailingDTO {
     private String id;
     private String campaignId;
     @JsonFormat(pattern = "dd.MM.yyyy")
-    private LocalDate sendDate;
+    public LocalDate sendDate;
     private boolean sent;
     @NotNull
     private MailingType type;
