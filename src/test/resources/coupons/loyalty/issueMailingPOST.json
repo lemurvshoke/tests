@@ -1,0 +1,26 @@
+{
+  "id": "1f94fdcd-190e-4d78-9367-6b39bbe1e47a",
+  "campaignId": "id678issue",
+  "sent": false,
+  "type": "COUPONS",
+  "template": {
+    "id": "5de0c3663b74f400013116de",
+    "name": "1.1.4",
+    "mindboxId": "1.1.4",
+    "used": false,
+    "fields": [
+      {
+        "name": "statPoints",
+        "required": true
+      }
+    ]
+  },
+  "mappings": [
+    {
+      "name": "statPoints",
+      "manual": true,
+      "value": "ура! склад!",
+      "skip": false
+    }
+  ]
+}
