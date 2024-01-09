@@ -1,0 +1,30 @@
+{
+  "id": "6586be3056f24d7c980be226",
+  "name": "Выдача и применение купонов 666 Применение",
+  "shortName": "шорт применение",
+  "description": "",
+  "type": "DISCOUNT",
+  "status": "DRAFT",
+  "startDate": "23.12.2023",
+  "endDate": "26.12.2023",
+  "creationDate": "23.12.2023 14:02:08",
+  "segment": {
+    "name": "Динамический сегмент",
+    "dynamicConfig": {
+      "type": "CATEGORY",
+      "customerCategory": "FRIENDS_CLUB",
+      "customerType": "INDIVIDUAL",
+      "hasCard": true,
+      "cardTypes": []
+    },
+    "headers": [],
+    "columns": [],
+    "common": true
+  },
+  "notificationEnabled": true,
+  "personalCabinetEnabled": true,
+  "owner": {
+    "name": "Администратор",
+    "username": "test_administrator"
+  }
+}

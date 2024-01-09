@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import petrovich.ds.campaign.segment.Product;
 
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;

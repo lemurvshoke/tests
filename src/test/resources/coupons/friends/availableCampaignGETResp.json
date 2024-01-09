@@ -1,0 +1,19 @@
+{
+  "id": "id678apply",
+  "name": "нейм",
+  "type": "DISCOUNT",
+  "startDate": "2023-12-27",
+  "endDate": "2023-12-31",
+  "status": "ACTIVE",
+  "description": "дескриптион",
+  "participating": false,
+  "activationRequired": false,
+  "availableActivations": -1,
+  "cities": [],
+  "profitValue": 0.0,
+  "profitType": "RUB",
+  "accountedLimit": 10000,
+  "accountedLimitType": "RUB",
+  "cumulative": false,
+  "anyCity": true
+}

@@ -1,0 +1,17 @@
+{
+  "id": "658eb20f56f24d7c980be299",
+  "name": "Скидка на покупку на сумму",
+  "shortName": "Короткое название",
+  "description": "Описание",
+  "type": "DISCOUNT",
+  "status": "DRAFT",
+  "startDate": "29.12.2023",
+  "endDate": "31.12.2023",
+  "creationDate": "29.12.2023 14:48:31",
+  "notificationEnabled": true,
+  "personalCabinetEnabled": true,
+  "owner": {
+    "name": "Администратор",
+    "username": "test_administrator"
+  }
+}

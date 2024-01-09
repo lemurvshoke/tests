@@ -1,8 +1,7 @@
 package petrovich.ds.dto.coupon;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import petrovich.ds.coupon.CouponDelivery;
 import petrovich.ds.enums.coupon.CouponRedemptionType;
 import petrovich.ds.enums.coupon.CouponStatus;
 
@@ -10,7 +9,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Data
+@EqualsAndHashCode
 @NoArgsConstructor
 public class CouponFullDTO implements Serializable {
 

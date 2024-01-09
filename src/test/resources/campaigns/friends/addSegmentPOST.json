@@ -1,0 +1,20 @@
+{
+  "campaignId": "658eb20f56f24d7c980be299",
+  "customer": {
+    "uuid": "b2eb1411-299d-11e7-a207-00259038e9f2",
+    "code": "00-563825",
+    "cardNumber": "9999999",
+    "name": "Тест Высшая Лига (не трогать)",
+    "phone": "79200040007",
+    "mail": "petrovichtest1@yandex.ru",
+    "actuallyParticipate": true,
+    "noticed": false
+  },
+  "validInDS": true,
+  "valid": true,
+  "blocked": false,
+  "organization": false,
+  "productGroups": [],
+  "comment": "",
+  "validInMB": "NOT_CHECKED"
+}

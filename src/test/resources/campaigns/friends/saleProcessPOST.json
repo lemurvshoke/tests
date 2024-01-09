@@ -1,0 +1,32 @@
+{
+  "cityGuid": "64c03c7b-77e8-11e5-89d5-00259038e9f2",
+  "isMobile": false,
+  "trackId": "0022de3b-1bc5-4457-8bec-b9d5bb776679",
+  "user": {
+    "userId": "b2eb1411-299d-11e7-a207-00259038e9f2",
+    "sessionId": "b5c7ee39-ae34-11e2-99f1-00259036a114",
+    "cardNumber": "9999999",
+    "contractorGuid": "b2eb1411-299d-11e7-a207-00259038e9f2",
+    "cardType": "Высшая лига",
+    "cardStatus": "Эксперт",
+    "cardPoints": 36000,
+    "isSliderAvailable": true,
+    "isAuthorizedByPin": true
+  },
+
+  "discount": {
+    "sliderPosition": 0,
+    "spentPoints": 0,
+    "couponsDiscount": 0
+  },
+  "products": [
+    {
+      "productGuid": "935e6621-7faa-11e1-aa03-00259036a114",
+      "retailPrice": 665,
+      "currentPrice": 665,
+      "qty": 23,
+      "isService": false
+    }
+  ],
+  "gifts": []
+}

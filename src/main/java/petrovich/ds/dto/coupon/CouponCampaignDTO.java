@@ -1,10 +1,10 @@
 package petrovich.ds.dto.coupon;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import petrovich.ds.campaign.mechanic.Mechanic;
-import petrovich.ds.campaign.segment.SegmentMeta;
+import petrovich.ds.dto.mechanic.Mechanic;
+import petrovich.ds.dto.segment.SegmentMeta;
 import petrovich.ds.dto.mailing.CampaignMailingDTO;
 import petrovich.ds.enums.campaign.CampaignStatus;
 import petrovich.ds.enums.campaign.CampaignType;
@@ -12,7 +12,7 @@ import petrovich.ds.enums.campaign.CampaignType;
 import java.time.LocalDate;
 import java.util.Collection;
 
-@Data
+@EqualsAndHashCode
 @NoArgsConstructor
 public class CouponCampaignDTO {
     public String id;

@@ -11,7 +11,7 @@ import static petrovich.ds.ui.campaigns.coupons.util.FriendsReusedSteps.createFr
 import static petrovich.ds.ui.campaigns.coupons.util.UnionReusedSteps.createUnionDiscountCampaignX1Coupon;
 
 
-@DisplayName("Промокоды")
+@DisplayName("UI: Промокоды")
 public class CouponsUITest extends CouponsUIMethods {
 
     // КЛУБ ДРУЗЕЙ

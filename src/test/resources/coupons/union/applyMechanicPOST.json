@@ -1,0 +1,53 @@
+{
+  "mechanic": {
+    "ruleData": {
+      "ruleTemplate": "DISCOUNT_SUM_COUPON_DEPEND",
+      "variables": [
+        {
+          "rusName": "Тираж купонов",
+          "templateVariable": "coupons",
+          "fieldType": "COUPON_EDITION",
+          "searchTerm": null,
+          "notRequired": false,
+          "value": "6576edb86d7f5a03e2b1c688",
+          "additionalValue": null,
+          "manual": true,
+          "removable": false,
+          "connectTo": null
+        },
+        {
+          "rusName": "Сумма покупки",
+          "templateVariable": "sum",
+          "fieldType": "NUMBER",
+          "searchTerm": null,
+          "notRequired": false,
+          "value": "11111",
+          "additionalValue": null,
+          "manual": true,
+          "removable": false,
+          "connectTo": null
+        },
+        {
+          "rusName": "Скидка",
+          "templateVariable": "discount",
+          "fieldType": "NUMBER",
+          "searchTerm": null,
+          "notRequired": false,
+          "value": "20",
+          "additionalValue": null,
+          "manual": true,
+          "removable": false,
+          "connectTo": null
+        }
+      ]
+    },
+    "multiplicity": "ALWAYS",
+    "cumulative": false,
+    "foreach": null,
+    "times": null,
+    "cities": null,
+    "type": "PERCENT",
+    "campaignSubtype": "DISCOUNT"
+  },
+  "groups": []
+}

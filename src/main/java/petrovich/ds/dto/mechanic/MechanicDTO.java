@@ -3,11 +3,13 @@ package petrovich.ds.dto.mechanic;
 import lombok.*;
 import petrovich.ds.dto.segment.ProductGroup;
 
-
-import javax.validation.Valid;
 import java.util.List;
 
-@Data
+
+
+@Getter
+@Setter
+@AllArgsConstructor
 @NoArgsConstructor
 public class MechanicDTO {
 

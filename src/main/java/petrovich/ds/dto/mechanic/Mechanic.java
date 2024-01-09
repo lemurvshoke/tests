@@ -1,17 +1,14 @@
 package petrovich.ds.dto.mechanic;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
-import petrovich.ds.campaign.mechanic.FieldType;
-import petrovich.ds.campaign.mechanic.RuleData;
-import petrovich.ds.campaign.mechanic.TemplateField;
 import petrovich.ds.enums.campaign.CampaignSubtype;
 import petrovich.ds.enums.campaign.LoyaltyType;
 import petrovich.ds.enums.campaign.Multiplicity;
 import petrovich.ds.enums.segment.ActionType;
-
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -22,7 +19,8 @@ import java.util.stream.Collectors;
 
 @Getter
 @Setter
-@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Mechanic implements Serializable {
 
     private static final long serialVersionUID = 7935164899118435372L;
@@ -41,7 +39,7 @@ public class Mechanic implements Serializable {
     private String cities;
 
     private ActionType type;
-    private LoyaltyType loyaltyType = LoyaltyType.NONE;
+    public LoyaltyType loyaltyType = LoyaltyType.NONE;
 
     @NotNull
     private CampaignSubtype campaignSubtype;

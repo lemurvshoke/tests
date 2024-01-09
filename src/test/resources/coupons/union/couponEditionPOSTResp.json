@@ -1,14 +1,14 @@
 {
   "id": "6576edb86d7f5a03e2b1c688",
   "externalId": "659962b0-a22c-11ee-bec8-00155dfcf30d",
-  "name": "Выдача и применение купонов 2412",
+  "name": "Название: Выдача и применение купонов",
   "description": "Описание: Акция на выдачу и применение",
   "owner": {
     "name": "Администратор",
     "username": "test_administrator"
   },
   "redemptionType": "SINGLE",
-  "loyalty": "FRIENDS_CLUB",
+  "loyalty": "UNION",
   "needGiveaway": true,
   "redemptionCampaignType": "DISCOUNT",
   "startDate": "24.12.2023",
@@ -26,7 +26,7 @@
       "name": "Динамический сегмент",
       "dynamicConfig": {
         "type": "CATEGORY",
-        "customerCategory": "FRIENDS_CLUB",
+        "customerCategory": "UNION",
         "customerType": "INDIVIDUAL",
         "hasCard": true,
         "cardTypes": []
@@ -52,7 +52,7 @@
             "rusName": "Сумма покупки",
             "templateVariable": "sum",
             "fieldType": "NUMBER",
-            "value": "11111",
+            "value": "10000",
             "manual": true,
             "notRequired": false,
             "removable": false
@@ -111,7 +111,7 @@
       "name": "Динамический сегмент",
       "dynamicConfig": {
         "type": "CATEGORY",
-        "customerCategory": "FRIENDS_CLUB",
+        "customerCategory": "UNION",
         "customerType": "INDIVIDUAL",
         "hasCard": true,
         "cardTypes": []
